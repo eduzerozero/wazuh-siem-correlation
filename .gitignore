@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Test logs
+test_alerts.json
+test_alerts.old
+*.log
+
+# Test and backup scripts
+watch_alerts_test.py
+watch_alerts_test_backup.py
+*.bak
+
+# Sensitive files
+.env
+.env.*
+*.key
+*.pem
+
+# Editor files
+.vscode/
+.idea/
