@@ -1,0 +1,33 @@
+[Unit]
+Description=Wazuh SIEM Alert Correlation Engine
+After=wazuh-manager.service
+Requires=wazuh-manager.service
+
+[Service]
+Type=simple
+User=wazuh-correlation
+Group=wazuh-correlation
+SupplementaryGroups=wazuh
+
+WorkingDirectory=/opt/wazuh-correlation
+ExecStart=/usr/bin/python3 -u /opt/wazuh-correlation/watch_alerts.py
+
+Restart=on-failure
+RestartSec=5
+
+StandardOutput=journal
+StandardError=journal
+
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+CapabilityBoundingSet=
+UMask=0027
+
+[Install]
+WantedBy=multi-user.target
