@@ -313,3 +313,38 @@ This project was developed for educational purposes in a controlled cybersecurit
 All authentication tests were performed against authorized systems and dedicated test accounts.
 
 This project is not intended to replace production-grade SIEM detection mechanisms.
+
+## SIEM Integration Update – 2026-11-25
+
+### Implemented Features
+
+- Structured JSON detection logging
+- Native Wazuh alert integration
+- Custom Wazuh rule 100202 with alert level 12
+- MITRE ATT&CK mapping: T1110 (Brute Force)
+- Restricted systemd write permissions
+- Detection indexing and dashboard search
+
+### Validation Results
+
+| Test | Result |
+|---|---|
+| Automated correlation tests | 8/8 passed |
+| Python syntax validation | Passed |
+| Structured JSON logging | Passed |
+| Wazuh custom rule matching | Passed |
+| MITRE ATT&CK mapping | Passed |
+| Detection indexing | Passed |
+| Dashboard alert search | Passed |
+
+### Pending Tasks
+
+- Update the complete installation documentation
+- Resolve the dashboard TLS certificate mismatch
+- Complete custom dashboard visualizations
+- Add automated JSON logger tests
+- Implement detection log rotation
+- Perform final integration testing
+
+This update supersedes earlier status statements regarding
+JSON logging, Wazuh integration, and MITRE ATT&CK mapping.

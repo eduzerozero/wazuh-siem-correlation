@@ -23,3 +23,18 @@ watch_alerts_test_backup.py
 # Editor files
 .vscode/
 .idea/
+
+# Detection logs
+detections.json
+detections.json.*
+
+# Sensitive installation files
+*.csr
+*.crt
+*.p12
+*.pfx
+*.srl
+wazuh-install-files/
+wazuh-install-files.tar*
+wazuh-certificates.tar*
+wazuh-passwords.txt

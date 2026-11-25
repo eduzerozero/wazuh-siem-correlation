@@ -3,6 +3,7 @@ import json
 import time
 from pathlib import Path
 from correlate_logins import correlate_logins
+from detection_logger import write_detection
 import os
 
 LOG_FILE = Path("/var/ossec/logs/alerts/alerts.json")
@@ -118,6 +119,8 @@ def watch_logs():
                     # Doppelte Detections verhindern
                     if detection_key in reported_detections:
                         continue
+
+                    write_detection(detection)
 
                     reported_detections[detection_key] = datetime.strptime(
                         detection["timestamp"],

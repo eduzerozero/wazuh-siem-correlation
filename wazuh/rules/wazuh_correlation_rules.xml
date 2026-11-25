@@ -1,0 +1,15 @@
+<group name="local,wazuh_correlation,">
+
+  <rule id="100202" level="12">
+    <decoded_as>json</decoded_as>
+    <field name="source">^wazuh-correlation$</field>
+    <field name="event_type">^brute_force_successful_login$</field>
+    <field name="rule_id">^100202$</field>
+    <description>Possible brute-force attack followed by successful login: User $(username), Agent $(agent_id), Time difference $(time_difference)s.</description>
+    <mitre>
+      <id>T1110</id>
+    </mitre>
+    <group>authentication_success,brute_force,</group>
+  </rule>
+
+</group>
